@@ -152,11 +152,6 @@ var moderationActionFactories = map[int]func(*nostr.Event) (Action, error){
 			return nil, fmt.Errorf("contradiction")
 		}
 
-		// TODO remove this once we start supporting private groups
-		if egs.Private {
-			return nil, fmt.Errorf("private groups not yet supported")
-		}
-
 		return egs, nil
 	},
 }
